@@ -1,39 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
+
+// Components
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { AppComponent } from './app.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { FormComponent } from './clientes/form.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DirectivaComponent } from './directiva/directiva.component';
-import { ClientesComponent } from './clientes/clientes.component';
-import { ClienteService } from './clientes/cliente.service';
-import { RouterModule, Routes } from '@angular/router'; // 1 ROUTER
-import { HttpClientModule } from '@angular/common/http';
-import { FormComponent } from './clientes/form.component'; // Sirve para conectarnos con los servicios
-import { FormsModule } from '@angular/forms';
 
-const routes: Routes = [  // 2 Arreglo de rutas
-    {path: '',redirectTo:'/clientes',pathMatch:'full' },
-    {path: 'directivas',component : DirectivaComponent },
-    {path: 'clientes',component : ClientesComponent },
-    {path: 'clientes/form',component : FormComponent}
-]
+// Services
+import { ClienteService } from './clientes/cliente.service';
 
 @NgModule({
   declarations: [
+    SidebarComponent,
+    NavbarComponent,
     AppComponent,
+    ClientesComponent,
     HeaderComponent,
     FooterComponent,
-    DirectivaComponent,
-    ClientesComponent,
     FormComponent,
-
+    DirectivaComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, // Utiliza para la clase Service
-    RouterModule.forRoot(routes), // 3 REGISTRAR EL ROUTER
-    FormsModule  // Sirve para trabajar con formularios
+    RouterModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [ClienteService],
   bootstrap: [AppComponent]
