@@ -16,6 +16,9 @@ import { FormComponent } from './clientes/form.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DirectivaComponent } from './directiva/directiva.component';
+import { FormsComponent } from './usuario/usuario.component';
+import { ActividadesComponent } from './actividades/actividades.component';
+import { PerfilProfesorComponent } from './profesor/perfil/perfilProfesor.component';
 
 // Services
 import { ClienteService } from './clientes/cliente.service';
@@ -29,7 +32,10 @@ import { ClienteService } from './clientes/cliente.service';
     HeaderComponent,
     FooterComponent,
     FormComponent,
-    DirectivaComponent
+    DirectivaComponent,
+    FormsComponent,
+    ActividadesComponent,
+    PerfilProfesorComponent
   ],
   imports: [
     BrowserModule,
