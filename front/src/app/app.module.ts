@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+import localeES from '@angular/common/locales/es';
+
+registerLocaleData(localeES, 'es');
 
 // Components
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -48,7 +51,7 @@ import { ClienteService } from './clientes/cliente.service';
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [ClienteService],
+  providers: [ClienteService, {provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

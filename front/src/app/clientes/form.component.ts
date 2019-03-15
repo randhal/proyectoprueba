@@ -46,7 +46,4 @@ export class FormComponent implements OnInit {
         swal.fire('Cliente Actualizado', `Cliente ${cliente.nombre} actualizado con éxito`, 'success');
       });
   }
-
-
-  
 }

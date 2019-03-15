@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Pipe, PipeTransform  } from '@angular/core';
 import { Cliente } from './cliente';
 // import { CLIENTES } from './clientes.json';
 import { Observable } from 'rxjs';
 // import { of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
+import { DatePipe } from '@angular/common';
 // rxjs clase 18
 
 
@@ -20,13 +21,34 @@ export class ClienteService {
   getClientes(): Observable<Cliente[]> {
   //Paso 2
     return this.http.get(this.urlEndPoint).pipe(
-      map( (response)  => response as Cliente[])
+      //EJEMPLO TAP
+      tap(response => {
+        let clientes = response as Cliente[];
+        clientes.forEach( cliente => {
+          console.log(cliente.nombre);
+        });
+      }),
+      map( (response)  => {
+        let clientes = response as Cliente[];
+        return clientes.map(cliente => {
+          cliente.nombre = cliente.nombre.toLocaleUpperCase();
+          return cliente;
+      });
+      }
+      ),
+      tap(response => {
+        console.log('ClienteService: tap2');
+        response.forEach(cliente => {
+          console.log(cliente.nombre);
+        }
+        );
+      })
     );
   }
 
   //METODO PARA CREAR PASO 1
   create(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(this.urlEndPoint, cliente, { headers: this.httpHeaders} ); 
+    return this.http.post<Cliente>(this.urlEndPoint, cliente, { headers: this.httpHeaders} );
   }
   //CARGANDO LOS DATOS EN EL FORMULARIO PARA ACTUALIZAR
   getCliente(id): Observable<Cliente> {
