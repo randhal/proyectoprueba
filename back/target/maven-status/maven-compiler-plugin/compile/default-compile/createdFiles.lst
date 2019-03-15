@@ -1,0 +1,8 @@
+com\rq\springboot\backend\apirest\models\Services\IClienteService.class
+com\rq\springboot\backend\apirest\controllers\ClienteRestController.class
+com\rq\springboot\backend\apirest\configuracion\CorsFilter.class
+com\rq\springboot\backend\apirest\models\entity\Cliente.class
+com\rq\springboot\backend\apirest\models\DAO\IClienteDAO.class
+com\rq\springboot\backend\apirest\models\Services\IClienteServiceImpl.class
+com\rq\springboot\backend\apirest\SpringBootBackendApirestApplication.class
+com\rq\springboot\backend\apirest\configuracion\SecurityConfig.class
