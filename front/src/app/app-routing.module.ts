@@ -1,26 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ClientesComponent } from './clientes/clientes.component';
-import { FormComponent } from './clientes/form.component';
-import { DirectivaComponent } from './directiva/directiva.component';
-import { FormsComponent } from './usuario/usuario.component';
-import { ActividadesComponent } from './actividades/actividades.component';
-import { PerfilProfesorComponent } from './profesor/perfil/perfilProfesor.component';
-import { AvancesProfesorComponent } from './profesor/avances/avancesProfesor.component';
+import { FormsComponent } from './alumno/usuario/usuario.component';
+import { ActividadesComponent } from './alumno/actividades/actividades.component';
+import { PerfilProfesorComponent } from './profesor/perfil/perfil-profesor.component';
+import { AvancesProfesorComponent } from './profesor/avances/avances-profesor.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/clientes', pathMatch: 'full' },
-  {path: 'directivas', component : DirectivaComponent },
-  {path: 'clientes', component : ClientesComponent },
-  {path: 'clientes/form', component : FormComponent},
-  {path: 'clientes/form/:id', component : FormComponent},
-
-  {path: 'miResumen', component : FormsComponent},
+  {path: '', pathMatch: 'full' , redirectTo: '',  }, // cualquier path vacio me regresa al home
+  {path: 'mantenimientoUsuario', component : FormsComponent},
   {path: 'misActividades', component : ActividadesComponent},
-
-  {path: 'perfilProfesor', component : PerfilProfesorComponent},
-  {path: 'avancesProfesor', component : AvancesProfesorComponent}
+  {path: 'perfil-profesor', component : PerfilProfesorComponent},
+  {path: 'avances-profesor', component : AvancesProfesorComponent},
+  {path: 'login', component : LoginComponent},
+  {path: '**', pathMatch: 'full', redirectTo: ''},
 
 ];
 
