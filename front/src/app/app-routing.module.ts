@@ -5,7 +5,7 @@ import { FormsComponent } from './alumno/usuario/usuario.component';
 import { ActividadesComponent } from './alumno/actividades/actividades.component';
 import { PerfilProfesorComponent } from './profesor/perfil/perfil-profesor.component';
 import { AvancesProfesorComponent } from './profesor/avances/avances-profesor.component';
-import { LoginComponent } from './login/login/login.component';
+import { LoginComponent } from './autenticacion/login/login.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full' , redirectTo: '',  }, // cualquier path vacio me regresa al home

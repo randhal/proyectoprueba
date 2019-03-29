@@ -23,7 +23,7 @@ import { PerfilProfesorComponent } from './profesor/perfil/perfil-profesor.compo
 import { AvancesProfesorComponent } from './profesor/avances/avances-profesor.component';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login/login.component';
+import { LoginComponent } from './autenticacion/login/login.component';
 
 
 

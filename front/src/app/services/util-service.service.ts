@@ -12,7 +12,7 @@ export class UtilServiceService {
     return this.http.get(url); // El llamado del servicio
   }
 
-  getLogin( user: string, pass: string){
+  getLogin( user: string, pass: string) {
     return this.getQuery(`${ user }/${pass}`);
   }
 }
