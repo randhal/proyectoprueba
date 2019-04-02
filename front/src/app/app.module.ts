@@ -4,10 +4,10 @@ import { registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import localeES from '@angular/common/locales/es';
-
 registerLocaleData(localeES, 'es');
 
 // Components
@@ -25,7 +25,7 @@ import { AvancesProfesorComponent } from './profesor/avances/avances-profesor.co
 import { AppComponent } from './app.component';
 import { LoginComponent } from './autenticacion/login/login.component';
 
-
+import { AlumnoService } from './services/services-alumno/alumno.service';
 
 @NgModule({
   declarations: [
@@ -45,10 +45,11 @@ import { LoginComponent } from './autenticacion/login/login.component';
     RouterModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'es'}],
+  providers: [ {provide: LOCALE_ID, useValue: 'es'}, AlumnoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

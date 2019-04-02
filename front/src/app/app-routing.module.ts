@@ -14,8 +14,7 @@ const routes: Routes = [
   {path: 'perfil-profesor', component : PerfilProfesorComponent},
   {path: 'avances-profesor', component : AvancesProfesorComponent},
   {path: 'login', component : LoginComponent},
-  {path: '**', pathMatch: 'full', redirectTo: ''},
-
+  {path: '**', pathMatch: 'full', redirectTo: ''}
 ];
 
 @NgModule({
