@@ -4,47 +4,42 @@
             <div class="card-body">
                 <h4 class="card-title">Información del alumno</h4>
                 <form class="form-inline">
-                    <div class="form-group col-lg-6">
-                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Fecha Inicio</label>
+                    <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <label for="exampleInputPassword2" class="col-sm-5 col-form-label">Fecha Inicio</label>
                         <div class="input-group">
-                            <!-- DATEPICKER -->
+                            <ejs-datepicker id='fechaInicio' format='dd-MM-yyyy'></ejs-datepicker>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <label for="exampleInputPassword2" class="col-sm-5 col-form-label">Fecha Fin</label>
+                        <div class="input-group">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                        <i class="mdi mdi-calendar"></i>
-                                    </button>
+                                <ejs-datepicker id='fechaFin' format='dd-MM-yyyy'></ejs-datepicker>
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group col-lg-6">
-                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Fecha Fin</label>
-                        <div class="input-group">
-                            <!-- DATEPICKER -->
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                        <i class="mdi mdi-calendar"></i>
-                                    </button>
-                            </div>
-                        </div>
+                    <div class="form-group col-lg-4 col-md-4">
+                        <button type="button" class="btn btn-outline-success ">Buscar</button>
                     </div>
                 </form>
             </div>
 
             <div class="col-md-12 grid-margin">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card card-inverse-success mb-3" style="max-width: 18rem;">
-                            <div class=" card-body ">
-                                <h2 class="card-title text-success mb-2 ">MEMBERS OF THE FAMILY</h2>
-                                <p class="mb-2 ">
-                                    Fecha de aperturas 12/01/19 8:30 pm
-                                </p>
-                                <button class="btn btn-secondary float-xl-right ">Ver contenido</button>
-                            </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <div class="box-part text-center" *ngFor='let actividad of actividades'>
+                        <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+                        <div class="title">
+                            <h3>{{actividad.titulo}}</h3>
                         </div>
+                        <div class="text">
+                            <span>Tema: {{actividad.descripcionCorta}}</span>
+                        </div>
+                        <a href="#">Ver Contenido</a>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>

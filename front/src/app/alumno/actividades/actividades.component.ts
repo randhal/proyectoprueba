@@ -4,22 +4,21 @@ import { AlumnoService } from '../../services/services-alumno/alumno.service';
 
 @Component({
   selector: 'app-actividades',
-  templateUrl: './actividades.component.html'
+  templateUrl: './actividades.component.html',
+  styleUrls: ['./actividades.component.css']
 })
 export class ActividadesComponent  {
-  actividad: any = {};
+
+  actividades: any[] = [];
   constructor(private router: ActivatedRoute,
               private alumno: AlumnoService) {
-        console.log(this.getArtista);
         // Llamar al servicio
-        this.getArtista('2');
-
+        this.getActividades('2');
   }
-  getArtista(id: string) {
-
-    this.alumno.getAlumno( id ).subscribe( data => {
+  getActividades(id: string) {
+    this.alumno.listaActividades( id ).subscribe( data => {
       console.log(data);
-      this.actividad = data;
+      this.actividades = data;
     });
   }
 }

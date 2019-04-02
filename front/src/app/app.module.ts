@@ -1,14 +1,17 @@
+import { UtilService } from './services/services-util/util.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import localeES from '@angular/common/locales/es';
 registerLocaleData(localeES, 'es');
+
+// calendar
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 // Components
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
@@ -41,15 +44,15 @@ import { AlumnoService } from './services/services-alumno/alumno.service';
     LoginComponent
   ],
   imports: [
+    DatePickerModule,
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'es'}, AlumnoService],
+  providers: [ {provide: LOCALE_ID, useValue: 'es'}, UtilService, AlumnoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
