@@ -15,11 +15,10 @@ export class FormsComponent  {
   }
 
   getUsuario(id: string) {
-  this.alumno.getUsuario( id ).subscribe( data => {
-    console.log(data);
-    this.datosUsuario = data;
-  });
-}
-
+    this.alumno.getUsuario( id ).subscribe( data => {
+      console.log(data);
+      this.datosUsuario = data;
+    });
+  }
 }
 

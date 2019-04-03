@@ -9,7 +9,6 @@ export class AlumnoService {
 
   getQuery( query: string) {
     const url = `http://localhost:8090/api/user/${query}`;  // Para no repetir codigo de la url
-
     return this.http.get(url); // El llamado del servicio
   }
 
