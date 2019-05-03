@@ -19,7 +19,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 // Componentes - Alumno
-import { FormsComponent } from './alumno/usuario/usuario.component';
+import { UsuarioComponent } from './alumno/usuario/usuario.component';
 import { ActividadesComponent } from './alumno/actividades/actividades.component';
 // Componentes - Profesor
 import { PerfilProfesorComponent } from './profesor/perfil/perfil-profesor.component';
@@ -37,7 +37,7 @@ import { AlumnoService } from './services/services-alumno/alumno.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    FormsComponent,
+    UsuarioComponent,
     ActividadesComponent,
     PerfilProfesorComponent,
     AvancesProfesorComponent,

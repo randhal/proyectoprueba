@@ -2,7 +2,7 @@
     <div class="col grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Información del alumno</h4>
+                <h4 class="card-title">Alumno: {{datosUsuario.apellidos}}, {{datosUsuario.nombres}} </h4>
                 <p class="card-description">
 
                 </p>
@@ -13,7 +13,7 @@
                             <div class="input-group-prepend bg-google">
                                 <span class="input-group-text bg-transparent"><i class="mdi mdi-account"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                            <input type="text" class="form-control" value={{datosUsuario.nombres}} placeholder="Nombre" aria-label="Nombre">
                         </div>
                     </div>
                     <div class="form-group">
@@ -22,16 +22,16 @@
                             <div class="input-group-prepend bg-info">
                                 <span class="input-group-text bg-transparent"><i class="mdi mdi-account"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+                            <input type="text" class="form-control" value={{datosUsuario.apellidos}} placeholder="Apellidos">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Edad</label>
+                        <label for="exampleInputEmail3">Fecha Nacimiento</label>
                         <div class="input-group">
                             <div class="input-group-prepend bg-info">
-                                <span class="input-group-text bg-transparent"><i class="mdi mdi-numeric"></i></span>
+                                <span class="input-group-text bg-transparent"><i class="mdi mdi-cake-variant"></i></span>
                             </div>
-                            <input type="number" class="form-control" placeholder="Edad" aria-label="Edad">
+                            <input type="text" class="form-control" placeholder="Fecha Nacimiento">
                         </div>
                     </div>
                     <div class="form-group">
@@ -40,27 +40,41 @@
                             <div class="input-group-prepend bg-info">
                                 <span class="input-group-text bg-transparent"><i class="mdi mdi-home"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Dirección" aria-label="Dirección">
+                            <input type="text" class="form-control" value={{datosUsuario.direccion}} placeholder="Dirección" aria-label="Dirección">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Apoderado</label>
+                        <label for="exampleInputEmail3">Sexo</label>
                         <div class="input-group">
                             <div class="input-group-prepend bg-info">
-                                <span class="input-group-text bg-transparent"><i class="mdi mdi-account"></i></span>
+                                <span class="input-group-text bg-transparent"><i class="mdi mdi-gender-male"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Apoderado" aria-label="Apoderado">
+                            <input type="text" class="form-control" value={{sexo.nombre}} placeholder="Apoderado" aria-label="Apoderado">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Teléfono</label>
+                        <label for="exampleInputEmail3">Nacionalidad</label>
                         <div class="input-group">
                             <div class="input-group-prepend bg-info">
-                                <span class="input-group-text bg-transparent"><i class="mdi mdi-phone"></i></span>
+                                <span class="input-group-text bg-transparent"><i class="mdi mdi-flag-variant"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Teléfono">
+                            <input type="text" class="form-control" value={{sexo.nombre}} placeholder="Apoderado" aria-label="Apoderado">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Teléfonos</label>
+                        <div class="input-group ">
+                            <div class="input-group-prepend bg-info">
+                                <span class="input-group-text bg-transparent"><i class="mdi mdi-deskphone"></i></span>
+                            </div>
+                            <input type="text" class="form-control" value={{datosUsuario.telefonoCasa}} placeholder="Teléfono" aria-label="Teléfono">
+                            <div class="input-group-prepend bg-info">
+                                <span class="input-group-text bg-transparent"><i class="mdi mdi-cellphone"></i></span>
+                            </div>
+                            <input type="text" class="form-control" value={{datosUsuario.telefonoCelular}} placeholder="Teléfono" aria-label="Teléfono">
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-success mr-2">Guardar</button>
                     <button class="btn btn-light">Cancel</button>
                 </form>
