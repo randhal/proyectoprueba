@@ -1,8 +1,0 @@
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\SpringBootBackendApirestApplication.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\configuracion\SecurityConfig.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\controllers\ClienteRestController.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\configuracion\CorsFilter.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\models\DAO\IClienteDAO.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\models\Services\IClienteService.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\models\entity\Cliente.java
-D:\PROYECTO_UPC\proyectoprueba\back\src\main\java\com\rq\springboot\backend\apirest\models\Services\IClienteServiceImpl.java
