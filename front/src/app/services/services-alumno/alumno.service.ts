@@ -7,19 +7,25 @@ export class AlumnoService {
 
   constructor( private http: HttpClient) { }
 
-  getQuery( query: string) {
+  getQueryAuth( query: string) {
     const url = `http://localhost:8090/api/user/${query}`;  // Para no repetir codigo de la url
-    return this.http.get(url); // El llamado del servicio
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa('rquispe:123456')
+      })
+    };
+    return this.http.get(url, httpOptions); // El llamado del servicio
   }
 
   listaActividades( id: string ) {
-    return this.getQuery(`${ id }/activity`)
+    return this.getQueryAuth(`${ id }/activity`)
       .pipe( map( data => {
         return data['content']; // de la data busque la propiedad content
       }));
   }
 
   getUsuario( codigoUsuario: string ) {
-    return this.getQuery(`${ codigoUsuario }`);
+    return this.getQueryAuth(`${ codigoUsuario }`);
   }
 }
