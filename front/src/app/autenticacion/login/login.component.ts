@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilService } from '../../services/services-util/util.service';
 
@@ -9,14 +9,16 @@ import { UtilService } from '../../services/services-util/util.service';
 })
 export class LoginComponent  {
   codigoUsuario: any = {};
+  usuarioInput: any;
   constructor(private router: ActivatedRoute,
     private Util: UtilService) {
-       // Llamar al servicio
-       this.listaActividades('rlozada');
+      // Llamar al servicio
+      // this.loginUser('rlozada');
      }
 
-     listaActividades(usuario: string) {
-      this.Util.loginUser( usuario ).subscribe( data => {
+     loginUser(newHero: string) {
+      console.log(newHero);
+      this.Util.loginUser( newHero ).subscribe( data => {
         console.log(data);
         this.codigoUsuario = data;
       });

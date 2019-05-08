@@ -13,9 +13,6 @@ registerLocaleData(localeES, 'es');
 // calendar
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
-// Graficos
-import { ChartsModule } from 'ng2-charts';
-
 // Components
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -32,7 +29,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './autenticacion/login/login.component';
 
 import { AlumnoService } from './services/services-alumno/alumno.service';
-import { LineaComponent } from './graficos/linea/linea.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +41,7 @@ import { LineaComponent } from './graficos/linea/linea.component';
     ActividadesComponent,
     PerfilProfesorComponent,
     AvancesProfesorComponent,
-    LoginComponent,
-    LineaComponent
+    LoginComponent
   ],
   imports: [
     DatePickerModule,
@@ -55,11 +50,7 @@ import { LineaComponent } from './graficos/linea/linea.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule.forRoot(),
-    ChartsModule
-  ],
-  exports: [
-    ChartsModule
+    NgbModule.forRoot()
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'es'}, UtilService, AlumnoService],
   bootstrap: [AppComponent]

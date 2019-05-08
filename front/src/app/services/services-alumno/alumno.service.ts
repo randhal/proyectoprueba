@@ -8,7 +8,7 @@ export class AlumnoService {
   constructor( private http: HttpClient) { }
 
   getQueryAuth( query: string) {
-    const url = `http://localhost:8090/api/user/${query}`;  // Para no repetir codigo de la url
+    const url = `http://localhost:8091/api/user/${query}`;  // Para no repetir codigo de la url
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
