@@ -9,8 +9,8 @@ import { LoginComponent } from './autenticacion/login/login.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full' , redirectTo: '',  }, // cualquier path vacio me regresa al home
-  {path: 'mantenimientoUsuario', component : UsuarioComponent},
-  {path: 'misActividades', component : ActividadesComponent},
+  {path: 'mantenimiento-usuario', component : UsuarioComponent},
+  {path: 'actividades-alumno', component : ActividadesComponent},
   {path: 'perfil-profesor', component : PerfilProfesorComponent},
   {path: 'avances-profesor', component : AvancesProfesorComponent},
   {path: 'login', component : LoginComponent},

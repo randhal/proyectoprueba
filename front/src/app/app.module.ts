@@ -21,6 +21,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
 // Componentes - Alumno
 import { UsuarioComponent } from './alumno/usuario/usuario.component';
 import { ActividadesComponent } from './alumno/actividades/actividades.component';
+// Fotos
+import { FotosComponent } from './componentes/fotos/fotos.component';
+import { CargaComponent } from './componentes/carga/carga.component';
 // Componentes - Profesor
 import { PerfilProfesorComponent } from './profesor/perfil/perfil-profesor.component';
 import { AvancesProfesorComponent } from './profesor/avances/avances-profesor.component';
@@ -29,6 +32,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './autenticacion/login/login.component';
 
 import { AlumnoService } from './services/services-alumno/alumno.service';
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +46,9 @@ import { AlumnoService } from './services/services-alumno/alumno.service';
     ActividadesComponent,
     PerfilProfesorComponent,
     AvancesProfesorComponent,
-    LoginComponent
+    LoginComponent,
+    FotosComponent,
+    CargaComponent
   ],
   imports: [
     DatePickerModule,
