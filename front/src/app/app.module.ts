@@ -32,6 +32,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './autenticacion/login/login.component';
 
 import { AlumnoService } from './services/services-alumno/alumno.service';
+import { LoginService } from './services/services-util/login.service';
 
 
 
@@ -59,7 +60,7 @@ import { AlumnoService } from './services/services-alumno/alumno.service';
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'es'}, UtilService, AlumnoService],
+  providers: [ {provide: LOCALE_ID, useValue: 'es'}, UtilService, AlumnoService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,14 +12,14 @@
                 <form>
                     <div class="form-group">
                         <label for="">NOMBRE DEL USUARIO:</label>
-                        <input type="text" #newHero class="form-control" name="nombre" placeholder="Username">
+                        <input type="text" #user class="form-control" name="nombre" placeholder="Username">
                     </div>
                     <div class="form-group">
                         <label for="">CONTRASEÑA:</label>
-                        <input type="text" class="form-control" name="password" placeholder="Password">
+                        <input type="password" #password class="form-control" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button (click)="loginUser(newHero.value)" type="button" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button>
+                        <button (click)="loginUser(user.value, password.value)" type="button" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button>
                     </div>
                     <div class="form-group forget-password">
                         <a href="#">¿Olvidaste tu contraseña?</a>

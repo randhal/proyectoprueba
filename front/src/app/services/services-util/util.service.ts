@@ -1,24 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UtilService {
+  public storage: Storage = sessionStorage;
+  ENDPOINT: String = 'http://localhost:8080/api/';
 
   constructor( private http: HttpClient) { }
 
-  getQuery( query: string) {
-    const url = `http://localhost:8091/api/user/${query}`;  // Para no repetir codigo de la url
+  getHeaders() {
+    const auth = this.storage.getItem('auth');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa('rquispe:123456')
+        'Authorization': 'Basic ' + auth
       })
     };
-    return this.http.post(url, httpOptions); // El llamado del servicio
+    return httpOptions;
   }
 
-  loginUser( codigo: string ) {
-    return this.getQuery(`login/${ codigo }`);
+  get(url: string) {
+    const finalURL = this.ENDPOINT + url;
+    return this.http.get(finalURL);
   }
+
+  post(url: string, body: Object) {
+    const finalURL = this.ENDPOINT + url;
+    return this.http.post(finalURL, JSON.stringify(body), this.getHeaders());
+  }
+
 }

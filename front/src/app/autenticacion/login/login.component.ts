@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UtilService } from '../../services/services-util/util.service';
+import { LoginService } from '../../services/services-util/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +11,13 @@ export class LoginComponent  {
   codigoUsuario: any = {};
   usuarioInput: any;
   constructor(private router: ActivatedRoute,
-    private Util: UtilService) {
+    private LoginService: LoginService) {
       // Llamar al servicio
       // this.loginUser('rlozada');
      }
 
-     loginUser(newHero: string) {
-      console.log(newHero);
-      this.Util.loginUser( newHero ).subscribe( data => {
+     loginUser(user: string, password: string) {
+      this.LoginService.loginUser(user, password).subscribe( data => {
         console.log(data);
         this.codigoUsuario = data;
       });
